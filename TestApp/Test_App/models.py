@@ -1,4 +1,5 @@
 from django.db import models
+from jsonfield import JSONField
 # Create your models here.
 class Data(models.Model):
     def __str__(self):
@@ -9,5 +10,8 @@ class Data(models.Model):
     private = models.BooleanField()
     maintainer_email = models.CharField(max_length=50)
     num_tags = models.IntegerField()
+    user_ID = models.CharField(max_length=50)
+    relationships = JSONField()
+    license = models.CharField(max_length=50)
     
     
